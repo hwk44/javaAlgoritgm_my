@@ -1,6 +1,6 @@
-package src.chap4;
+package chap4;
 
-import src.chap4.genericStack.EmptyGenericStackException;
+import chap4.genericStack.EmptyGenericStackException;
 
 public class _8queens {
 

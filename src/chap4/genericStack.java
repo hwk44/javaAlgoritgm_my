@@ -1,4 +1,4 @@
-package src.chap4;
+package chap4;
 
 import java.lang.RuntimeException;
 
