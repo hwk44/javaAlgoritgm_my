@@ -1,5 +1,6 @@
 package chap4;
 
+// 8queens 해 찾기
 import chap4.genericStack.EmptyGenericStackException;
 
 public class _8queens {
