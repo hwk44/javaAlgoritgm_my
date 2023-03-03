@@ -1,4 +1,4 @@
-package lec0227;
+package lec0302;
 
 //단순한 linked list에서 insert, delete하는 알고리즘을 코딩: 1단계
 
