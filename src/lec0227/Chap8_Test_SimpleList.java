@@ -70,37 +70,31 @@ class LinkedList {
 
 		Node newNode = new Node(element); // 입력 값을 데이터로 가지는 노드를 만듦
 
-		Node p = first, q = null;	// p 노드는 처음을 가리키고 q는 null을 가리키도록 설정
+		Node p = first, q = null;	// p 노드는 처음 first 을 가리키고 q는 null 을 가리키도록 설정
 
-		// 맨처음에 데이터 생성 시
-		if(first==null)		first = newNode;
-		else {
+		if(p == null) { // 리스트가 비었으면
+			first = newNode; // 처음 노드를 newNode 로 대체
+			 }
+		else { // 비어있지 않으면
+			while (p != null) {
 
-			while (p != null ) {
-
-				if (p.data > element) {
+				if (p.data > element) { // 10에 data / element 에 5
 
 					newNode.link = p;
+					
+					// 제일 처음 데이터가 들어갈 경우
+					if(q == null) first = newNode;
 
-					//제일 처음에 데이터가 삽입 될 경우
-					if(q == null)	first = newNode;
+					else q.link = newNode;
 
-						//그 외의 경우
-					else	q.link = newNode;
-
-					//입력하고나면 빠져나오기
 					break;
-
-				} else { //p.data <=element
-
-					//p,q 이동
+				}else  {
 					q = p;
 					p = p.link;
 				}
-			}
 
-			//데이터 제일 마지막에 넣어야할때 : p=null
-			if(p == null)	q.link = newNode;
+
+			}
 		}
 	}
 
