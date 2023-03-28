@@ -13,8 +13,18 @@ public class 크기가작은부분문자열 {
     "500220839878"	"7"	    8
     "10203"	        "15"	3
 */
-    public int solution(String t, String p) {
+    public static int solution(String t, String p) {
         int answer = 0;
+
+        int count =0; // 검사 횟수
+        for (int i = 0; i <  t.length() - p.length() + 1; i++) {
+            String s = t.substring(i, i + p.length());
+            count++;
+
+            if(Long.valueOf(s) <= Long.valueOf(p)) answer++;
+            System.out.println("s=" +s);
+        }
+        System.out.println("count =" +count);
         return answer;
     }
 
@@ -27,17 +37,22 @@ public class 크기가작은부분문자열 {
 
         String temp = t.substring(0,3); // 인덱스 0 ~ 2 가져오기
 
+
 //        System.out.println(temp);
-        int result = 0;
+//        int result = 0;
+//
+//        for (int i = 0; i <  t.length() - p.length() + 1; i++) {
+//            String s = t.substring(i, i + p.length());
+//            if(Integer.valueOf(s) <= Integer.valueOf(p)) result++;
+//
+//            System.out.println(s);
+//        }
 
-        for (int i = 0; i <  t.length() - p.length() + 1; i++) {
-            String s = t.substring(i, i + p.length());
-            if(Integer.valueOf(s) <= Integer.valueOf(p)) result++;
+//        System.out.println(result);
 
-            System.out.println(s);
-        }
+        System.out.println(solution("3141592","271" ));
+        System.out.println(solution("3141592","271" ));
+        System.out.println(solution("3141592","271" ));
 
-        System.out.println(result);
-        
     }
 }
