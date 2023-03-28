@@ -18,16 +18,24 @@ public class 문자열내마음대로정렬하기 {
     }
 
     public static void main(String[] args) {
-//        List<String> list1 =
-//        String[] stirngs = {"sun", "bed", "car"};
-//        int i =1 ;
-//        for (String s : stirngs) {
-//
+        char c = 'a';
+        System.out.println((char) 96 );
+        // ` a 앞 문자열
+        List<String> list1 = new ArrayList<>();
+        String[] stirngs = {"sun", "bed", "car"};
+        int i =1 ;
+        for (String s : stirngs) {
+
 //            if(s.charAt(i) >);
-//        }
+        }
 
-        List<String> n = new ArrayList<>();
+//        String[] strings = {"sun", "bed", "car"};
+//        List<String> s = new ArrayList<>();
+//        int num = 1; // 주어진 정수
+//        boolean f = true;
+//        if("s">"a")
 
+//        System.out.println("s" > "a");
 
     }
 }
