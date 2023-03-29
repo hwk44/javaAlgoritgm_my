@@ -29,22 +29,25 @@ public class 콜라문제 {
         // a개로 나눈 몫*b ==> 받을 콜라수
 
         // 빈병 a개 주면 콜라 b개 받음 보유중인 빈병은 n개임 몇개 받을수있을까??
-//        int answer = 0;
+
         int coke = (n/a)*b; // 처음 받을 콜라병. 보유한 콜라가 됨.
-        int answer = coke;
-        int empty = n%a; // 나머지 0개
+        int answer = coke;  // 맨 처음 받은 콜라
+        int empty = n%a; // 나머지 빈병 0개
 
-        while(coke > a) { // 10 갠데 거기서 
-            coke = coke/a; // a 개로 나눈 몫 몇개 더 줄수 있는가?
+        // 언제까지? 빈병이 a 보다 작아질때까지
 
-        }
-        if(coke/a == 0) {// 나누어 떨어지면 다 먹고 빈병 만들기
-            empty += coke;
-            coke = 0;
+            while (coke > a) {
+                if (coke / a == 0) { // 나누어 떨어지면 다 먹고 빈병 만들기
+                    empty += coke;
+                    coke = 0;
 
-        }else{ // 남으면?
+                } else { // 남으면?
+                    empty += coke - coke % a; // 남은 갯수 만큼 마셔서 빈병 만들기
+                    coke %= a;
+                }
 
-        }
+            }
+
         System.out.println("coke = " + coke);
         System.out.println("empty = " + empty);
 
