@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # Created by https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse,intellij,windows
+=======
+# Created by https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij,eclipse,windows
+>>>>>>> 3c9fc5ddeb60a207e816ce3eeea449f53c72fffb
 
 ### Eclipse ###
 .metadata
@@ -120,7 +125,11 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
+<<<<<<< HEAD
 out/
+=======
+/out
+>>>>>>> 3c9fc5ddeb60a207e816ce3eeea449f53c72fffb
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -232,4 +241,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij,windows
+=======
+# End of https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse,windows
+>>>>>>> 3c9fc5ddeb60a207e816ce3eeea449f53c72fffb
