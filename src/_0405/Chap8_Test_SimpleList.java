@@ -105,7 +105,10 @@ class LinkedList {
                 q = p;
                 p = p.next;
 
-            }else{ // 삽입 값이 p 보다 작으면?
+            } else if (p.data == element) {
+                System.out.println("같은 값이 있습니다.");
+                return;
+            } else{ // 삽입 값이 p 보다 작으면?
                 q.next = newNode;
                 newNode.next = p;
                 return;
@@ -184,10 +187,10 @@ class LinkedList {
             do {
                 switch (menu = SelectMenu()) {
                     case Add:                           // 머리노드 삽입
-                        double d = Math.random();
-                        data = (int) (d * 50);
-//                        System.out.println("데이터 입력");
-//                        data = sc.nextInt();
+//                        double d = Math.random();
+//                        data = (int) (d * 50);
+                        System.out.println("데이터 입력");
+                        data = sc.nextInt();
                         l.Add(data);
                         break;
                     case Delete:                          // 머리 노드 삭제
