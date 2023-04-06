@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 
 class SimpleObject {
+	public SimpleObject(String no, String name) {
+		this.no = no;
+		this.name = name;
+	}
+
 	static final int NO = 1; // 번호를 읽어 들일까요?
 	static final int NAME = 2; // 이름을 읽어 들일까요?
 
@@ -49,9 +54,10 @@ class SimpleObject {
 	}
 }
 class Node {
-	SimpleObject data;
+	SimpleObject sb;
 	Node link;
-	private Node(int element) {
+	public Node(SimpleObject sb) {
+		this.sb = sb;
 		link = null;
 	}
 }
@@ -65,13 +71,18 @@ class LinkedList {
 	return 0;
 	}
 	public void Show() { // 전체 리스트를 순서대로 출력한다.
-
+		
 	}
-	public void Add(SimpleObject element) //임의 값을 삽입할 때 리스트가 오름차순으로 정렬이 되도록 한다 
-	{
+	public void Add(SimpleObject sb) {//임의 값을 삽입할 때 리스트가 오름차순으로 정렬이 되도록 한다
+		Node newnode = new Node(sb);
+		Node p = first;
+		Node q = null;
+		if(first == null) first = newnode; // 맨 처음 값
+		if(p!= null){ // 처음 값이 있을 경우
 
+		}
 	}
-	public boolean Search(SimpleObject data) { // 전체 리스트를 순서대로 출력한다.
+	public boolean Search(SimpleObject data) { // 하나를 찾아서 true 리턴
 		return true;
 	}
 }
