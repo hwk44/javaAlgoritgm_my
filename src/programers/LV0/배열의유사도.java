@@ -1,4 +1,4 @@
-package src.programers;
+package src.programers.LV0;
 
 public class 배열의유사도 {
 

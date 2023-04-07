@@ -1,4 +1,4 @@
-package programers;
+package src.programers.LV0;
 /*
   머쓱이네 피자가게는 피자를 두 조각에서 열 조각까지 원하는 조각 수로 잘라줍니다.
   피자 조각 수 slice 와 피자를 먹는 사람의 수 n이 매개변수로 주어질 때,
