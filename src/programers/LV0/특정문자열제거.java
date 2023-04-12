@@ -1,4 +1,4 @@
-package src.programers;
+package src.programers.LV0;
 
 public class 특정문자열제거 {
 

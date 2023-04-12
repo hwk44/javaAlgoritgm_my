@@ -1,4 +1,4 @@
-package programers;
+package src.programers.LV0;
 
 import java.util.Arrays;
 // 주어진 문자열을 반대로 출력

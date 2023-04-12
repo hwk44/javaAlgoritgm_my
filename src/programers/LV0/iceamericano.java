@@ -1,4 +1,4 @@
-package programers.LV0;
+package src.programers.LV0;
 /*
     머쓱이는 추운 날에도 아이스 아메리카노만 마십니다.
     아이스 아메리카노는 한잔에 5,500원입니다.

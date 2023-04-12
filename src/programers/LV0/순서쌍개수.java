@@ -1,4 +1,4 @@
-package programers.LV0;
+package src.programers.LV0;
 
 /*
 순서쌍이란 두 개의 숫자를 순서를 정하여 짝지어 나타낸 쌍으로 (a, b)로 표기합니다.
