@@ -1,6 +1,8 @@
 package src.programers.Lv1;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class 문자열내마음대로정렬하기 {
@@ -12,22 +14,45 @@ public class 문자열내마음대로정렬하기 {
     같은 문자면 사전순으로 정렬
     */
 
-    public String[] solution(String[] strings, int n) {
-        String[] answer = {};
+    public static String[] solution(String[] strings, int n) {
+        String[] answer = new String[strings.length];
+
+        List<String> list1 = new ArrayList<>();
+        for (String s : strings) {
+            list1.add(s);
+        }
+
+        // 정렬하는
+        Collections.sort(list1, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if (o1.charAt(n) < o2.charAt(n)) return -1;
+                else if (o1.charAt(n) > o2.charAt(n)) return 1;
+                else return o1.compareTo(o2); // 인덱스 값이 같으면 사전 순으로
+            }
+        });
+//        for (String s : list1) {
+//            System.out.println(s);
+//        }
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = list1.get(i);
+            System.out.println(answer[i]);
+        }
         return answer;
     }
 
     public static void main(String[] args) {
-        char c = 'a';
-        System.out.println((char) 96 );
-        // ` a 앞 문자열
-        List<String> list1 = new ArrayList<>();
-        String[] stirngs = {"sun", "bed", "car"};
-        int i =1 ;
-        for (String s : stirngs) {
+//        char c = 'a';
+//        System.out.println((char) 96 );
+        //   ` : a 앞 문자열
 
-//            if(s.charAt(i) >);
-        }
+
+//        String[] stirngs = {"sun", "bud", "car"};
+        String[] stirngs = {"abce", "abcd", "cdx"};
+        int i = 1 ;
+
+        System.out.println(solution(stirngs,i));
+
 
 //        String[] strings = {"sun", "bed", "car"};
 //        List<String> s = new ArrayList<>();

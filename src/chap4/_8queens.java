@@ -1,23 +1,26 @@
-package chap4;
+package src.chap4;
 
 // 8queens 해 찾기
-import chap4.genericStack.EmptyGenericStackException;
+// import chap4.genericStack.EmptyGenericStackException;
+
+
+import src.chap4.*;
+
+//import java.awt.*;
 
 public class _8queens {
 
-	public static void main(String[] args) throws EmptyGenericStackException {
+	public static void main(String[] args) throws genericStack.EmptyGenericStackException {
 		int[][] d = new int[8][8];
 		solvequeens(d);
 	}
-	
-	
 
-	private static void solvequeens(int[][] a) throws EmptyGenericStackException {
+	private static void solvequeens(int[][] a) throws genericStack.EmptyGenericStackException {
 		int x = 0, y = 0;
 
 		int num = 1;
-		chap4.genericStack st = new chap4.genericStack(50); // 포인트를 담는 스택 생성
-		chap4.Point p = new chap4.Point(x, y); // 포인트 생성
+		genericStack st = new genericStack(50); // 포인트를 담는 스택 생성
+		genericStack.Point p = new genericStack.Point(x, y); // 포인트 생성
 
 		while (p.getY() <= 8) {
 
@@ -34,7 +37,7 @@ public class _8queens {
 				}
 				if (checkcol(a, y) && checkdiagSE(a, x, y) && checkdiagSW(a, x, y)) { // 같은 열에 퀸이 없으면 true
 					a[x][y] = 1; // 3조건 만족. 퀸을 넣음 스택 푸시
-					st.push(new chap4.Point(x, y));
+					st.push(new genericStack.Point(x, y));
 //				st.dump();
 				} else { // 대각이나 열에 퀸이 있으면 다음 좌표
 

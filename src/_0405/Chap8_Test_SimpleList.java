@@ -194,7 +194,8 @@ class LinkedList {
                         l.Add(data);
                         break;
                     case Delete:                          // 머리 노드 삭제
-                        int i = sc.nextInt();
+                        System.out.println("삭제할 데이터를 입력하세요.");
+                    int i = sc.nextInt();
                     int num = l.Delete(i);
                     if( num ==0) {
                         System.out.println("삭제된 데이터는 " + i  +"입니다");

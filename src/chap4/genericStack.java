@@ -1,8 +1,40 @@
-package chap4;
+package src.chap4;
 
+import java.awt.*;
 import java.lang.RuntimeException;
 
 public class genericStack {
+
+
+	public static class Point {
+		private int ix;
+		private int iy;
+
+		public Point(int x, int y) {
+			this.ix = x;
+			this.iy = y;
+		}
+
+		public String toString() {
+			return "<" + ix + ", " + iy + ">";
+		}
+
+		public int getX() {
+			return ix;
+		}
+
+		public int getY() {
+			return iy;
+		}
+
+		public void setX(int x) {
+			ix = x;
+		}
+
+		public void setY(int y) {
+			iy = y;
+		}
+	}
 	
 	//--- 실행시 예외: 스택이 비어있음 ---//
 	// generic class는 Throwable을 상속받을 수 없다 - 지원하지 않는다
@@ -106,32 +138,4 @@ public class genericStack {
 	}
 }
 
-class Point {
-	private int ix;
-	private int iy;
 
-	public Point(int x, int y) {
-		this.ix = x;
-		this.iy = y;
-	}
-
-	public String toString() {
-		return "<" + ix + ", " + iy + ">";
-	}
-
-	public int getX() {
-		return ix;
-	}
-
-	public int getY() {
-		return iy;
-	}
-
-	public void setX(int x) {
-		ix = x;
-	}
-
-	public void setY(int y) {
-		iy = y;
-	}
-}

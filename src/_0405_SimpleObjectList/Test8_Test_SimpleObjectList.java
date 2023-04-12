@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 
-class SimpleObject {
+class SimpleObject implements Comparable<SimpleObject> {
     public SimpleObject(String no, String name) {
         this.no = no;
         this.name = name;
@@ -37,24 +37,28 @@ class SimpleObject {
         return "{" + no + " : " + name + "}";
     }
 
-    //	@Override
+    @Override
     public int compareTo(SimpleObject o) {
-        if (this.no.compareTo(o.no) < 0) { // 번호가 작으면
-//			if(this.name.compareTo(o.name) < 0) //
-            return -1;
-        } else if (this.no.compareTo(o.no) > 0) { // 번호가 크면?
-//			if(this.name.compareTo(o.name) < 0) { // 이름이 작은걸 먼저
-//				return -1;
-//			}else return 1;
-            return 1;
-        } else { // 번호가 같은 경우
-            if (this.name.compareTo(o.name) < 0) { // 이름이 작으면
-                return -1;
-            } else return 1;
+//        if (this.no.compareTo(o.no) < 0) { // 번호가 작으면
+////			if(this.name.compareTo(o.name) < 0) //
+//            return -1;
+//        } else if (this.no.compareTo(o.no) > 0) { // 번호가 크면?
+////			if(this.name.compareTo(o.name) < 0) { // 이름이 작은걸 먼저
+////				return -1;
+////			}else return 1;
+//            return 1;
+//        } else { // 번호가 같은 경우
+//            if (this.name.compareTo(o.name) < 0) { // 이름이 작으면
+//                return -1;
+//            } else return 1;
+//        }
+
+        if (this.name.compareTo(o.getName()) == 0) { // 이름이 같으면?
+            return Integer.parseInt(this.no) - Integer.parseInt(o.getNo()); // 회원 번호 순으로 정렬
         }
+        return this.name.compareTo(o.getName());
 
     }
-
 }
 
 class Node {
@@ -78,11 +82,24 @@ class LinkedList {
         Node p = first;
         Node q = null;
 
+        if (p == null) {
+            System.out.println("리스트가 비었습니다.");
+            return -1;
+        }
         while (p != null) {
-            if (p.sb.getNo().equals(element.getNo()) && p.sb.getName().equals(element.getName())) { //
-                p = p.link;
-                q.link = p;
-                return 0;
+            if (p.sb.getNo().equals(element.getNo()) & p.sb.getName().equals(element.getName())) { // 경우에 따라 삭제 처리
+                if (q == null) { // 맨 앞 노드라면?
+                    p = p.link;
+                    first = p;
+                    return 0;
+                } else if (p.link == null) { // 맨 뒤 노드라면?
+                    q.link = null;
+                    return 0;
+                } else { // 일반적인 경우
+                    p = p.link;
+                    q.link = p;
+                    return 0;
+                }
             }
             q = p;
             p = p.link;
@@ -113,11 +130,11 @@ class LinkedList {
             first = newnode; // 맨 처음 값
             return;
         }
-        while (p != null) { // 처음 값이 있을 경우
+        while (p != null) { // 비어있지 않을 경우
 
 
             if (p.sb.compareTo(sb) > 0) {
-                if(p == first){
+                if (p == first) {
                     newnode.link = p;
                     first = newnode;
                     return;
@@ -125,10 +142,10 @@ class LinkedList {
                 q.link = newnode;
                 newnode.link = p;
                 return;
-            } else if (p.sb.compareTo(sb) == 0) {
-                System.out.println("번호가 중복됩니다.");
+            } else if (p.sb.compareTo(sb) == 0) { // 이미 있는 경우
+                System.out.println("데이터가 중복됩니다.");
                 return;
-            } else {
+            } else { //
                 if (p.link == null) {
                     p.link = newnode;
                     return;
@@ -222,12 +239,15 @@ public class Test8_Test_SimpleObjectList {
                     break;
                 case Delete:                          // 머리 노드 삭제
                     System.out.println("삭제할 데이터");
+
+                    System.out.print("번호");
                     n = sc.next();
+                    System.out.print("이름");
                     name = sc.next();
-                    SimpleObject sb = new SimpleObject(n,name);
-	            	 int num = l.Delete(sb);
-                     if(num == 0) System.out.println("삭제된 데이터 " + sb.toString());
-                     else System.out.println("삭제된 데이터가 없습니다.");
+                    SimpleObject sb = new SimpleObject(n, name);
+                    int num = l.Delete(sb);
+                    if (num == 0) System.out.println("삭제된 데이터 " + sb.toString());
+                    else System.out.println("삭제된 데이터가 없습니다.");
                     break;
                 case Show:                           // 꼬리 노드 삭제
                     l.Show();
