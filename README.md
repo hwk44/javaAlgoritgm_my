@@ -1,7 +1,5 @@
 # javaAlgoritgm_my
-<<<<<<< HEAD
- + 0228 int형 링크드리스트 구현(미완성)
- 
+    + doubleLinkedList
 ## 프로그래머스
 
 ### Lv1. 이상한 문자열
@@ -45,11 +43,11 @@ public class 크기가작은부분문자열 {
      + 감이 안옴
 ### Lv1.2016년
      + 남의 코드를 봐버림 좀 잊어질때 풀자
-=======
+
 > 4_5 int형 링크드리스트 구현(완성)<br>
 4_6 SimpleObjectList 미완성
  - simpleObject -> comparator --> LV1.실패율에서 연습
->>>>>>> 80ac10465f1eeca67311972436786710c2b956e5
+
 
 ## 프로그래머스
 ### Lv1. 이상한 문자열
