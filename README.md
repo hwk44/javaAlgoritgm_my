@@ -1,7 +1,7 @@
 # javaAlgoritgm_my
 > doubleLinkedList<br>
 > 4_5 int형 링크드리스트 구현(완성)<br>
-> 4_6 SimpleObjectList 미완성
+> 4_6 SimpleObjectList 완성
 ## 프로그래머스
 
 ### Lv1. 이상한 문자열
@@ -43,11 +43,9 @@ public class 크기가작은부분문자열 {
      + 재귀로 풀어야할듯
 ### Lv1.비밀지도
      + 감이 안옴
-### Lv1.2016년
-     + 남의 코드를 봐버림 좀 잊어질때 풀자
 
-> 4_5 int형 링크드리스트 구현(완성)<br>
-> 4_6 SimpleObjectList 미완성
+> int형 링크드리스트 구현(완성)<br>
+>  SimpleObjectList 완성
  - simpleObject -> comparator --> LV1.실패율에서 연습
 
 
@@ -70,57 +68,44 @@ class test {
     public static void main(String[] args) {
         int[] score = {10, 100, 20, 150, 1, 100, 200};
 
-    class 명예의전당 {
-    public static void main(String[] args) {
-        int[] score = {10, 100, 20, 150, 1, 100, 200};
+        class 명예의전당 {
+            public static void main(String[] args) {
+                int[] score = {10, 100, 20, 150, 1, 100, 200};
 
-        List answer = new ArrayList<>();
-        List<Integer> list = new ArrayList();
+                List answer = new ArrayList<>();
+                List<Integer> list = new ArrayList();
 
-        list.add(score[0]);
-        answer.add(score[0]);
+                list.add(score[0]);
+                answer.add(score[0]);
 
-        for (
-                int i = 1;
-                i < score.length; i++) {
+                for (
+                        int i = 1;
+                        i < score.length; i++) {
 
-        List answer = new ArrayList<>();
-        List<Integer> list = new ArrayList();
+                    List answer = new ArrayList<>();
+                    List<Integer> list = new ArrayList();
 
-        int k = 3;
-        list.add(score[0]);
-        answer.add(score[0]);
+                    int k = 3;
+                    list.add(score[0]);
+                    answer.add(score[0]);
 
-        for (int i = 1; i < score.length; i++) {
-            if (list.size() < k) { // k < 3 일때 동안에는 그냥 add
-                list.add(score[i]);
-                Collections.sort(list);
-                answer.add(list.get(0));
-                continue;
-            }
-            if (list.size() == k && list.get(0) < score[i]) {
-                list.add(score[i]);
-                Collections.sort(list);
-                list.remove(list.get(0));
+                    for (int i = 1; i < score.length; i++) {
+                        if (list.size() < k) { // k < 3 일때 동안에는 그냥 add
+                            list.add(score[i]);
+                            Collections.sort(list);
+                            answer.add(list.get(0));
+                            continue;
+                        }
+                        if (list.size() == k && list.get(0) < score[i]) {
+                            list.add(score[i]);
+                            Collections.sort(list);
+                            list.remove(list.get(0));
+                        }
+                    }
+                }
             }
         }
     }
 }
-
-
 ```
-## 못 푼 문제들 / 에러 처리
-### Lv1. 숫자짝꿍 - 미결
-     이진탐색. 겹치는거라서  List로 만들고 겹치면 remove해야함
-=======
-```
-## 못 푼 문제들 / 에러 처리
-### Lv1. 콜라문제
-     재귀로 풀어야할듯
-### Lv1.비밀지도
-     감이 안옴
-### Lv1.2016년
-     남의 코드를 봐버림 좀 잊어질때 풀자
->>>>>>> 2de015719f788c283181d52b6a01a1b2f31ea583
-### LV1.둘만의 암호 - 미결
-    - char 아스키 코드값으로 풀려하는데 z에서 인덱스 초과하는 부분..
+
