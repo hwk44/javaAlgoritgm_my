@@ -1,4 +1,4 @@
-package src.programers.Lv1;
+package src.programers.Lv1.solved;
 
 import java.util.ArrayList;
 import java.util.Arrays;
