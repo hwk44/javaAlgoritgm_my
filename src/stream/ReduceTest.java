@@ -1,7 +1,10 @@
 package src.stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 public class ReduceTest {
     public static void main(String[] args) {
@@ -20,6 +23,7 @@ public class ReduceTest {
         // reduce 부분에 초기값을 넣지 않음
         String str = Arrays.stream(greetings).reduce(new CompareString()).get();
         System.out.println(str);
+
     }
 
 
