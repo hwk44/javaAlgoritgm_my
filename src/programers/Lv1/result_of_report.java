@@ -22,7 +22,6 @@ public class result_of_report {
 */
 
 
-
     public static void main(String[] args) {
 //        String[] id_list = {"muzi", "frodo", "apeach", "neo"};
 //        String[] report = {"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
@@ -32,9 +31,7 @@ public class result_of_report {
         String[] report = {"ryan con", "ryan con", "ryan con", "ryan con"};
         int k = 3;
 
-
-
-        int[] answer = solution(id_list,report,k);
+        int[] answer = solution(id_list, report, k);
 
         for (int i = 0; i < answer.length; i++) {
             System.out.print(answer[i] + " ");
@@ -47,42 +44,37 @@ public class result_of_report {
         Map<String, Integer> countOfReport = new HashMap<>();
 
         // 신고당한 사람 리스트
+//        List<String> members = new ArrayList<>();
         List<String> members = new ArrayList<>();
 
         // 동일한 신고 제거
         Set<String> report_list = new HashSet<>(Arrays.asList(report));
 
-        for (String s :report_list) { // report 순회하면서 신고횟수 누적
+        for (String s : report_list) { // report 순회하면서 신고횟수 누적
             String temp = s.split(" ")[1]; // 신고받은 사람
-            
-            if (countOfReport.containsKey(temp)) { // Map 객체에 있으면 +1
-                int current_count = countOfReport.get(temp);
-                countOfReport.put(temp, current_count + 1); // 신고받은 횟수 + 1
-            }else countOfReport.put(temp,1); // 없으면 1
-            
+
+
+//            if (countOfReport.containsKey(temp)) { // Map 객체에 있으면 +1
+//                countOfReport.put(temp, countOfReport.get(temp) + 1); // 신고받은 횟수 + 1
+//            }else countOfReport.put(temp,1); // 없으면 1
+
+            // 위 조건문 삼항 연산자로 처리
+            countOfReport.put(temp, countOfReport.getOrDefault(temp, 0) + 1);
+
             // 신고횟수가 넘어가고 members 목록에 없으면 추가
             if ((countOfReport.get(temp) >= k) && !members.contains(temp)) members.add(temp);
         }
 
-//        System.out.println("countOfReport");
-//        for (Map.Entry<String, Integer> entry:countOfReport.entrySet()) {
-//            System.out.println(entry);
-//        }
-//        System.out.println("member");
-//        for (String s :members) {
-//            System.out.println(s);
-//        };
 
         // 정지 대상자 members
         for (int i = 0; i < id_list.length; i++) {
-            String user = id_list[i];
-            for (String s :report_list) {
-                if (s.split(" ")[0].equals(user) && members.contains(s.split(" ")[1]))
+            String user = id_list[i]; // 아이디 저장
+            // 신고 내역 돌면서 확인해야 하는데 여기서 아마도 시간 초과
+            for (String s : report_list) {
+                if (s.contains(user) && s.split(" ")[0].equals(user) && members.contains(s.split(" ")[1]))
                     answer[i]++;
             }
         }
-
-
         return answer;
     }
 }
